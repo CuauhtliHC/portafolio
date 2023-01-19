@@ -33,14 +33,18 @@ function Skills(): JSX.Element {
         </Typography>
       </Box>
       <Box
-        sx={{ boxShadow: "1px 1px 30px blue" }}
-        ml={20}
-        mr={20}
+        sx={{
+          boxShadow: "1px 1px 30px blue",
+          ml: { xs: 1, sm: 5, md: 20 },
+          mr: { xs: 1, sm: 5, md: 20 },
+        }}
         mt={10}
         pt={5}
+        pb={5}
       >
         <Typography
           align="center"
+          fontSize="30px"
           sx={{
             textShadow: ".1px .5px 1px red, 0 0 .2em blue, 0 0 0.1em blue;",
           }}

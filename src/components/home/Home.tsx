@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Typography } from "@mui/material";
 import AboutMe from "./about/AboutMe";
 import Skills from "./skills/Skills";
+import Projects from "./projects/Projects";
 
 function Home(): JSX.Element {
   return (
@@ -46,6 +47,7 @@ function Home(): JSX.Element {
       </Typography>
       <AboutMe />
       <Skills />
+      <Projects />
     </Fragment>
   );
 }

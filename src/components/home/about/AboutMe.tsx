@@ -122,10 +122,10 @@ function AboutMe(): JSX.Element {
               clases clases de C, HTML5, CSS, PHP, redes y hardware, cuando
               estaba terminando de cursar tuve que hacer mis practicas en la
               empresa HostDime Mexico, un Centro de Datos, en la cual termine
-              trabajado durante y pude tener un crecimiento tanto profesional
-              como de conocimiento, en linux, ciberseguridad, hardware enfocado
-              a servidores y redes, por ultimo ingrese al bootcamp de plataforma
-              5 donde incremente mi conocimiento de programacion
+              trabajado y pude tener un crecimiento tanto profesional como de
+              conocimiento, en linux, ciberseguridad, hardware enfocado a
+              servidores y redes, por ultimo ingrese al bootcamp de plataforma 5
+              donde incremente mi conocimiento de programacion
             </Typography>
           </Box>
         </Box>
