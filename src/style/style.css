@@ -1,0 +1,9 @@
+/* en myfont.css */
+@font-face {
+  font-family: "AlienFont";
+  src: url("./font/SFAlienEncounters.ttf") format("truetype");
+}
+
+.my-class {
+  font-family: "AlienFont", sans-serif;
+}
