@@ -41,8 +41,6 @@ function AboutMe(): JSX.Element {
             overflow="hidden"
           >
             <Box
-              height="500px"
-              width="800px"
               boxShadow="0px 0px 122px 25px black inset"
               sx={{
                 backgroundImage: "url('https://i.imgur.com/eg7VIun.jpg')",
@@ -52,28 +50,48 @@ function AboutMe(): JSX.Element {
                   "0%": { backgroundPositionY: "0px" },
                   "100%": { backgroundPositionY: "-420px" },
                 },
+                height: { xs: "1000px", sm: "600px", md: "500px" },
+                width: { xs: "290px", sm: "500px", md: "800px" },
               }}
             >
               <Box
-                borderTop="3em solid #7b807d"
-                borderRight="3em solid #9da28f"
-                borderBottom="3em solid #b0b5a0"
-                borderLeft="3em solid #8c917e"
                 boxShadow="0 0.1em 0.2em 0.2em #0007 inset"
                 top="50%"
                 left="50%"
                 width="calc(100% )"
                 height="calc(100%)"
-                sx={{ transform: "translate(-50%, -50%,)" }}
+                sx={{
+                  transform: "translate(-50%, -50%,)",
+                  borderTop: {
+                    xs: "1em solid #7b807d",
+                    sm: "2em solid #7b807d",
+                    md: "3em solid #7b807d",
+                  },
+                  borderRight: {
+                    xs: "1em solid #9da28f",
+                    sm: "2em solid #9da28f",
+                    md: "3em solid #9da28f",
+                  },
+                  borderBottom: {
+                    xs: "1em solid #b0b5a0",
+                    sm: "2em solid #b0b5a0",
+                    md: "3em solid #b0b5a0",
+                  },
+                  borderLeft: {
+                    xs: "1em solid #8c917e",
+                    sm: "2em solid #8c917e",
+                    md: "3em solid #8c917e",
+                  },
+                }}
               >
                 <Typography
                   fontSize="19px"
-                  pl={5}
                   pt={5}
-                  pr={5}
                   sx={{
                     textShadow:
                       "1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;",
+                    pl: { xs: 1, md: 5 },
+                    pr: { xs: 1, md: 5 },
                   }}
                 >
                   Mi transcurso dentro del mundo IT comenzo desde la
