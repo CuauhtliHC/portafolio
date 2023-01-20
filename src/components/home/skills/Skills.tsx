@@ -2,21 +2,21 @@ import React, { Fragment } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 
 function Skills(): JSX.Element {
-  const logos = [
-    "chakra",
-    "cpanel",
-    "git",
-    "github",
-    "js",
-    "material",
-    "mysql",
-    "next",
-    "nodejs",
-    "postgres",
-    "react",
-    "sequelize",
-    "firebase",
-    "typescript",
+  const skillsAndTools = [
+    { logo: "chakra", name: "Chakra-UI" },
+    { logo: "cpanel", name: "WHM/Cpanel" },
+    { logo: "git", name: "Git" },
+    { logo: "github", name: "GitHub" },
+    { logo: "js", name: "JS" },
+    { logo: "material", name: "Material-UI" },
+    { logo: "mysql", name: "MySQL" },
+    { logo: "next", name: "Nextjs" },
+    { logo: "nodejs", name: "Nodejs" },
+    { logo: "postgres", name: "Postgresql" },
+    { logo: "react", name: "React" },
+    { logo: "sequelize", name: "Sequelize" },
+    { logo: "firebase", name: "Firebase" },
+    { logo: "typescript", name: "Typescript" },
   ];
   return (
     <Fragment>
@@ -36,6 +36,9 @@ function Skills(): JSX.Element {
         position="relative"
         overflow="hidden"
         letterSpacing="4px"
+        mt={10}
+        pt={5}
+        pb={5}
         sx={{
           ml: { xs: 1, sm: 5, md: 20 },
           mr: { xs: 1, sm: 5, md: 20 },
@@ -45,9 +48,9 @@ function Skills(): JSX.Element {
             top: 0,
             left: "-100%",
             width: "100%",
-            height: "2px",
+            height: "5px",
             background: "linear-gradient(90deg, transparent, #03e9f4)",
-            animation: "btn-anim1 1s linear infinite;",
+            animation: "btn-anim1 2s linear infinite;",
           },
           "@keyframes btn-anim1": {
             "0%": {
@@ -60,11 +63,11 @@ function Skills(): JSX.Element {
           "span:nth-of-type(2)": {
             top: "-100%",
             right: 0,
-            width: "2px",
+            width: "5px",
             height: "100%",
             background: "linear-gradient(180deg, transparent, #03e9f4)",
-            animation: "btn-anim2 1s linear infinite",
-            animationDelay: "0.25s",
+            animation: "btn-anim2 2s linear infinite",
+            animationDelay: "0.5s",
           },
           "@keyframes btn-anim2": {
             "0%": {
@@ -78,10 +81,10 @@ function Skills(): JSX.Element {
             bottom: 0,
             right: "-100%",
             width: "100%",
-            height: "2px",
+            height: "5px",
             background: "linear-gradient(270deg, transparent, #03e9f4)",
-            animation: "btn-anim3 1s linear infinite",
-            animationDelay: "0.5s",
+            animation: "btn-anim3 2s linear infinite",
+            animationDelay: "1s",
           },
           "@keyframes btn-anim3": {
             "0%": {
@@ -94,11 +97,11 @@ function Skills(): JSX.Element {
           "span:nth-of-type(4)": {
             bottom: "-100%",
             left: 0,
-            width: "2px",
+            width: "5px",
             height: "100%",
             background: "linear-gradient(360deg, transparent, #03e9f4)",
-            animation: "btn-anim4 1s linear infinite",
-            animationDelay: "0.75s",
+            animation: "btn-anim4 2s linear infinite",
+            animationDelay: "1.5s",
           },
           "@keyframes btn-anim4": {
             "0%": {
@@ -109,9 +112,6 @@ function Skills(): JSX.Element {
             },
           },
         }}
-        mt={10}
-        pt={5}
-        pb={5}
       >
         <span></span>
         <span></span>
@@ -122,24 +122,53 @@ function Skills(): JSX.Element {
           fontSize="30px"
           sx={{
             textShadow: ".1px .5px 1px red, 0 0 .2em blue, 0 0 0.1em blue;",
+            animation: "blink-start 1.5s infinite step-end",
+            "@keyframes blink-start": {
+              "0%": {
+                opacity: "0",
+              },
+              "50%": {
+                opacity: 1,
+              },
+            },
           }}
         >
           Player Select
         </Typography>
         <Grid container justifyContent="center" pt={5} spacing={10}>
-          {logos.map((logo, i) => (
-            <Grid item key={i}>
-              <Box
-                component="img"
-                sx={{
-                  height: 100,
-                  width: 100,
-                }}
-                alt={logo}
-                src={`/img/logos/${logo}.png`}
-              />
-            </Grid>
-          ))}
+          {skillsAndTools.map(
+            (skill, i): JSX.Element => (
+              <Grid item key={i}>
+                <Box
+                  component="img"
+                  sx={{
+                    height: 100,
+                    width: 100,
+                    animation: "jump 2s ease-in-out infinite alternate",
+                    "@keyframes jump": {
+                      "0%": {
+                        transform: "translateY(0)",
+                      },
+                      "100%": {
+                        transform: "translateY(-30%)",
+                      },
+                    },
+                  }}
+                  alt={skill.logo}
+                  src={`/img/logos/${skill.logo}.png`}
+                />
+                <Typography
+                  align="center"
+                  sx={{
+                    textShadow:
+                      ".1px .5px 1px red, 0 0 .2em blue, 0 0 0.1em blue;",
+                  }}
+                >
+                  {skill.name}
+                </Typography>
+              </Grid>
+            )
+          )}
         </Grid>
       </Box>
     </Fragment>
