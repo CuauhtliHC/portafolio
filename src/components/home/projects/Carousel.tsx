@@ -37,7 +37,7 @@ export default function Carousel(): JSX.Element {
 
   return (
     <Box alignItems="center" justifyContent="center" display="flex" pt={10}>
-      <Box sx={{ maxWidth: 800, flexGrow: 1 }}>
+      <Box sx={{ maxWidth: 800, width: { xs: "250px" } }}>
         <Box pb={5}>
           <Paper
             square
@@ -46,8 +46,6 @@ export default function Carousel(): JSX.Element {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              height: 50,
-              pl: 2,
               bgcolor: "background.default",
             }}
           >
@@ -64,15 +62,14 @@ export default function Carousel(): JSX.Element {
             alignItems="center"
             justifyContent="center"
             display="flex"
-            sx={{ height: 510, maxWidth: 800, width: "100%", p: 2 }}
+            sx={{ height: { xs: "300px" }, maxWidth: 800, width: "100%", p: 2 }}
           >
             <Box
               component="img"
               sx={{
-                height: 466,
-                width: 700,
+                width: { xs: "300px" },
               }}
-              alt="The house from the offer."
+              alt={steps[activeStep].label}
               src={steps[activeStep].image}
             />
           </Box>
