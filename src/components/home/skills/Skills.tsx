@@ -33,15 +33,90 @@ function Skills(): JSX.Element {
         </Typography>
       </Box>
       <Box
+        position="relative"
+        overflow="hidden"
+        letterSpacing="4px"
         sx={{
-          boxShadow: "1px 1px 30px blue",
           ml: { xs: 1, sm: 5, md: 20 },
           mr: { xs: 1, sm: 5, md: 20 },
+          transition: "0.5s",
+          "& span": { position: "absolute", display: "block" },
+          "span:nth-of-type(1)": {
+            top: 0,
+            left: "-100%",
+            width: "100%",
+            height: "2px",
+            background: "linear-gradient(90deg, transparent, #03e9f4)",
+            animation: "btn-anim1 1s linear infinite;",
+          },
+          "@keyframes btn-anim1": {
+            "0%": {
+              left: "-100%",
+            },
+            "50%, 100%": {
+              left: "100%",
+            },
+          },
+          "span:nth-of-type(2)": {
+            top: "-100%",
+            right: 0,
+            width: "2px",
+            height: "100%",
+            background: "linear-gradient(180deg, transparent, #03e9f4)",
+            animation: "btn-anim2 1s linear infinite",
+            animationDelay: "0.25s",
+          },
+          "@keyframes btn-anim2": {
+            "0%": {
+              top: "-100%",
+            },
+            "50%, 100%": {
+              top: "100%",
+            },
+          },
+          "span:nth-of-type(3)": {
+            bottom: 0,
+            right: "-100%",
+            width: "100%",
+            height: "2px",
+            background: "linear-gradient(270deg, transparent, #03e9f4)",
+            animation: "btn-anim3 1s linear infinite",
+            animationDelay: "0.5s",
+          },
+          "@keyframes btn-anim3": {
+            "0%": {
+              right: "-100%",
+            },
+            "50%, 100%": {
+              right: "100%",
+            },
+          },
+          "span:nth-of-type(4)": {
+            bottom: "-100%",
+            left: 0,
+            width: "2px",
+            height: "100%",
+            background: "linear-gradient(360deg, transparent, #03e9f4)",
+            animation: "btn-anim4 1s linear infinite",
+            animationDelay: "0.75s",
+          },
+          "@keyframes btn-anim4": {
+            "0%": {
+              bottom: "-100%",
+            },
+            "50%, 100%": {
+              bottom: "100%",
+            },
+          },
         }}
         mt={10}
         pt={5}
         pb={5}
       >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
         <Typography
           align="center"
           fontSize="30px"

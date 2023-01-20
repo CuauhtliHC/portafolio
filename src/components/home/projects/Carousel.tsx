@@ -5,22 +5,20 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 
 const steps = [
   {
-    label: "Select campaign settings",
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
+    label: "E-Commerce Pineapple",
+    description: `E-commerce de celulares que permite ver y listar los celulares disponibles, buscar productos, dejar reviews, agregar al carrito y realizar el checkout. Tambien cuenta con panel de administrador donde se puede administrar productos, administrar usuarios y ordenes de compra.`,
+    image: "/img/projects/e-commerce.png",
   },
   {
-    label: "Create an ad group",
+    label: "Portafolio",
     description:
       "An ad group contains one or more ads which target a shared set of keywords.",
+    image: "/img/projects/portfolio.png",
   },
   {
-    label: "Create an ad",
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
+    label: "Tmdb movies",
+    description: `Es una aplicacion web que permite buscar peliculas y series, ver sus detalles y también agregarla a favoritos si tienes la sesion iniciada.`,
+    image: "/img/projects/tmdb.png",
   },
 ];
 
@@ -38,58 +36,102 @@ export default function Carousel(): JSX.Element {
   };
 
   return (
-    <Box alignItems="center" justifyContent="center" display="flex">
-      <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-        <Paper
-          square
-          elevation={0}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            height: 50,
-            pl: 2,
-            bgcolor: "background.default",
-          }}
-        >
-          <Typography>{steps[activeStep].label}</Typography>
-        </Paper>
-        <Box sx={{ height: 255, maxWidth: 400, width: "100%", p: 2 }}>
-          {steps[activeStep].description}
+    <Box alignItems="center" justifyContent="center" display="flex" pt={10}>
+      <Box sx={{ maxWidth: 800, flexGrow: 1 }}>
+        <Box pb={5}>
+          <Paper
+            square
+            elevation={0}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: 50,
+              pl: 2,
+              bgcolor: "background.default",
+            }}
+          >
+            <Typography
+              fontSize="30px"
+              sx={{
+                textShadow: "1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;",
+              }}
+            >
+              {steps[activeStep].label}
+            </Typography>
+          </Paper>
+          <Box
+            alignItems="center"
+            justifyContent="center"
+            display="flex"
+            sx={{ height: 510, maxWidth: 800, width: "100%", p: 2 }}
+          >
+            <Box
+              component="img"
+              sx={{
+                height: 466,
+                width: 700,
+              }}
+              alt="The house from the offer."
+              src={steps[activeStep].image}
+            />
+          </Box>
+          <Paper
+            square
+            elevation={0}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              pl: 2,
+              bgcolor: "background.default",
+            }}
+          >
+            <Typography
+              sx={{
+                textShadow: "1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;",
+              }}
+            >
+              {steps[activeStep].description}
+            </Typography>
+          </Paper>
         </Box>
-        <MobileStepper
-          variant="progress"
-          steps={maxSteps}
-          position="static"
-          activeStep={activeStep}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-            >
-              Next
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowLeft />
-              ) : (
-                <KeyboardArrowRight />
-              )}
-            </Button>
-          }
-          backButton={
-            <Button
-              size="small"
-              onClick={handleBack}
-              disabled={activeStep === 0}
-            >
-              {theme.direction === "rtl" ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-              Back
-            </Button>
-          }
-        />
+        <Box>
+          <MobileStepper
+            variant="progress"
+            steps={maxSteps}
+            position="static"
+            activeStep={activeStep}
+            nextButton={
+              <Button
+                size="small"
+                onClick={handleNext}
+                disabled={activeStep === maxSteps - 1}
+              >
+                Next
+                {theme.direction === "rtl" ? (
+                  <KeyboardArrowLeft />
+                ) : (
+                  <KeyboardArrowRight />
+                )}
+              </Button>
+            }
+            backButton={
+              <Button
+                size="small"
+                onClick={handleBack}
+                disabled={activeStep === 0}
+              >
+                {theme.direction === "rtl" ? (
+                  <KeyboardArrowRight />
+                ) : (
+                  <KeyboardArrowLeft />
+                )}
+                Back
+              </Button>
+            }
+          />
+        </Box>
       </Box>
     </Box>
   );
