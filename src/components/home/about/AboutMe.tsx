@@ -20,113 +20,82 @@ function AboutMe(): JSX.Element {
           Sobre mi
         </Typography>
       </Box>
-      <Box>
+      <Box alignItems="center" justifyContent="center" display="flex">
         <Box
-          alignItems="center"
-          justifyContent="center"
-          display="flex"
           pt={5}
-          sx={{ display: { xs: "flex", sm: "none" } }}
-        >
-          <Box
-            display="flex"
-            sx={{
-              backgroundImage: 'url("/img/tv-cel.png")',
-              backgroundSize: "cover",
-            }}
-          >
-            <Box pt={10} pl={1} pb={20}>
-              <Typography
-                sx={{
-                  fontSize: { sm: "19px" },
-                  textShadow: "1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;",
-                }}
-              >
-                Mi transcurso dentro del mundo IT comenzo desde la preparatoria
-                donde estudie una carrera tecnica en informatica, en donde tuve
-                clases clases de C, HTML5, CSS, PHP, redes y hardware, cuando
-                estaba terminando de cursar tuve que hacer mis practicas en la
-                empresa HostDime Mexico, un Centro de Datos, en la cual termine
-                trabajado y pude tener un crecimiento tanto profesional como de
-                conocimiento, en linux, ciberseguridad, hardware enfocado a
-                servidores y redes, por ultimo ingrese al bootcamp de plataforma
-                5 donde incremente mi conocimiento de programacion
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-      {/*  */}
-      <Box>
-        <Box
-          alignItems="center"
-          justifyContent="center"
-          display="flex"
-          pt={5}
-          sx={{ display: { xs: "none", sm: "flex", md: "none" } }}
-        >
-          <Box
-            display="flex"
-            sx={{
-              backgroundImage: 'url("/img/tv.png")',
-              backgroundSize: "cover",
-            }}
-          >
-            <Box pt={7} pl={9} pb={7} pr={7}>
-              <Typography
-                sx={{
-                  fontSize: { sm: "15px" },
-                  textShadow: "1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;",
-                }}
-              >
-                Mi transcurso dentro del mundo IT comenzo desde la preparatoria
-                donde estudie una carrera tecnica en informatica, en donde tuve
-                clases clases de C, HTML5, CSS, PHP, redes y hardware, cuando
-                estaba terminando de cursar tuve que hacer mis practicas en la
-                empresa HostDime Mexico, un Centro de Datos, en la cual termine
-                trabajado y pude tener un crecimiento tanto profesional como de
-                conocimiento, en linux, ciberseguridad, hardware enfocado a
-                servidores y redes, por ultimo ingrese al bootcamp de plataforma
-                5 donde incremente mi conocimiento de programacion
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-      {/*  */}
-      <Box
-        alignItems="center"
-        justifyContent="center"
-        display="flex"
-        pt={5}
-        sx={{ display: { xs: "none", md: "flex" } }}
-      >
-        <Box
-          display="flex"
+          pb={5}
+          pl={5}
+          pr={5}
+          boxShadow="0 -1em 0.75em #ba816c7f inset"
+          flexDirection="column"
+          borderRadius="0.75em 0.75em 0.75em 0.75em / 3em 3em 0.75em 0.75em"
           sx={{
-            backgroundImage: 'url("/img/tv.png")',
-            backgroundSize: "cover",
-            height: "500px",
-            width: "920px",
+            background: "#8c5b3d",
+            backgroundImage:
+              "radial-gradient(10em 0.4em at 8em 0.8em,#fff,#fff0), radial-gradient(10em 0.4em at 20em 0.8em,#fff,#fff0),radial-gradient(10em 0.4em at 36em 0.8em,#fff,#fff0), radial-gradient(14em 0.8em at 6em 2em,#fff 50%,#fff0), radial-gradient(55em 0.4em at 50% 2em,#fff3,#fff0), linear-gradient(#0000,#0004), radial-gradient(12em 0.4em at 32em 2em,#fff,#fff0), url(https://i.ibb.co/rwcYp69/vintage-tv-texture.jpg)",
           }}
         >
-          <Box pt={10} pl={10} pr={26}>
-            <Typography
-              fontSize="19px"
+          <Box
+            sx={{ backgroundColor: "#bcb" }}
+            margin="3em 0 0 0"
+            overflow="hidden"
+          >
+            <Box
+              height="500px"
+              width="800px"
+              boxShadow="0px 0px 122px 25px black inset"
               sx={{
-                textShadow: "1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;",
+                backgroundImage: "url('https://i.imgur.com/eg7VIun.jpg')",
+                backgroundRepeat: "repeat",
+                animation: "noise 230ms steps(6) infinite",
+                "@keyframes noise": {
+                  "0%": { backgroundPositionY: "0px" },
+                  "100%": { backgroundPositionY: "-420px" },
+                },
               }}
             >
-              Mi transcurso dentro del mundo IT comenzo desde la preparatoria
-              donde estudie una carrera tecnica en informatica, en donde tuve
-              clases clases de C, HTML5, CSS, PHP, redes y hardware, cuando
-              estaba terminando de cursar tuve que hacer mis practicas en la
-              empresa HostDime Mexico, un Centro de Datos, en la cual termine
-              trabajado y pude tener un crecimiento tanto profesional como de
-              conocimiento, en linux, ciberseguridad, hardware enfocado a
-              servidores y redes, por ultimo ingrese al bootcamp de plataforma 5
-              donde incremente mi conocimiento de programacion
-            </Typography>
+              <Box
+                borderTop="3em solid #7b807d"
+                borderRight="3em solid #9da28f"
+                borderBottom="3em solid #b0b5a0"
+                borderLeft="3em solid #8c917e"
+                boxShadow="0 0.1em 0.2em 0.2em #0007 inset"
+                top="50%"
+                left="50%"
+                width="calc(100% )"
+                height="calc(100%)"
+                sx={{ transform: "translate(-50%, -50%,)" }}
+              >
+                <Typography
+                  fontSize="19px"
+                  pl={5}
+                  pt={5}
+                  pr={5}
+                  sx={{
+                    textShadow:
+                      "1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;",
+                  }}
+                >
+                  Mi transcurso dentro del mundo IT comenzo desde la
+                  preparatoria donde estudie una carrera tecnica en informatica,
+                  en donde tuve clases clases de C, HTML5, CSS, PHP, redes y
+                  hardware, cuando estaba terminando de cursar tuve que hacer
+                  mis practicas en la empresa HostDime Mexico, un Centro de
+                  Datos, en la cual termine trabajado y pude tener un
+                  crecimiento tanto profesional como de conocimiento, en linux,
+                  ciberseguridad, hardware enfocado a servidores y redes, por
+                  ultimo ingrese al bootcamp de plataforma 5 donde incremente mi
+                  conocimiento de programacion
+                </Typography>
+              </Box>
+              <Box
+                top={0}
+                left={0}
+                width="100%"
+                height="100%"
+                boxShadow="0 -0.1em 0.1em 0.6em #3a1415 inset"
+              ></Box>
+            </Box>
           </Box>
         </Box>
       </Box>
