@@ -1,36 +1,23 @@
 import React, { Fragment, useState } from "react";
 import { Box, Typography } from "@mui/material";
+import { grey } from "@mui/material/colors";
 
 const steps = [
   {
     label: "E-Commerce Pineapple",
     description: `E-commerce de celulares que permite ver y listar los celulares disponibles, buscar productos, dejar reviews, agregar al carrito y realizar el checkout. Tambien cuenta con panel de administrador donde se puede administrar productos, administrar usuarios y ordenes de compra.`,
     image: "/img/projects/e-commerce.png",
-    tecnologies: [
-      {
-        name: "ReactJS",
-        icon: "react/react-original.svg",
-      },
-      { name: "Redux", icon: "redux/redux-original.svg" },
-      { name: "NodeJS", icon: "nodejs/nodejs-original.svg" },
-      { name: "ExpressJS", icon: "express/express-original.svg" },
-      { name: "PostgreSQL", icon: "postgresql/postgresql-original.svg" },
-      { name: "Sequelize", icon: "sequelize/sequelize-original.svg" },
-      { name: "MaterialUI", icon: "materialui/materialui-original.svg" },
-    ],
   },
   {
     label: "Portafolio",
     description:
       "An ad group contains one or more ads which target a shared set of keywords.",
     image: "/img/projects/portfolio.png",
-    tecnologies: [],
   },
   {
     label: "Tmdb movies",
     description: `Es una aplicacion web que permite buscar peliculas y series, ver sus detalles y también agregarla a favoritos si tienes la sesion iniciada.`,
     image: "/img/projects/tmdb.png",
-    tecnologies: [],
   },
 ];
 
@@ -72,10 +59,10 @@ function Projects(): JSX.Element {
         <Box
           pt="18px"
           borderRadius="4px 4px 30px 4px"
-          boxShadow="5px 5px 3px #BFAB52"
+          boxShadow="5px 5px 3px blue"
           left="calc(50% - 100px)"
           sx={{
-            backgroundColor: "#79c753",
+            backgroundColor: grey[600],
             width: { xs: "360px", sm: "560px", md: "760px" },
             height: { xs: "360px", sm: "460px", md: "560px" },
           }}
