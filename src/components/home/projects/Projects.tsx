@@ -1,6 +1,5 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Box, Typography } from "@mui/material";
-import { grey } from "@mui/material/colors";
 
 const steps = [
   {
@@ -36,16 +35,19 @@ const steps = [
 ];
 
 function Projects(): JSX.Element {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
   const maxSteps = steps.length;
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if (activeStep === maxSteps - 1) setActiveStep(0);
+    else setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    if (activeStep === 0) setActiveStep(maxSteps - 1);
+    else setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
   return (
     <Fragment>
       <Box pt={5} alignItems="center" justifyContent="center" display="flex">
@@ -66,17 +68,19 @@ function Projects(): JSX.Element {
         pb={10}
         pt={3}
       >
+        {/* colored_component */}
         <Box
           pt="18px"
-          height="360px"
           borderRadius="4px 4px 30px 4px"
           boxShadow="5px 5px 3px #BFAB52"
           left="calc(50% - 100px)"
           sx={{
             backgroundColor: "#79c753",
-            width: { xs: "360px", xl: "200px" },
+            width: { xs: "360px", sm: "560px", md: "760px" },
+            height: { xs: "360px", sm: "460px", md: "560px" },
           }}
         >
+          {/* screen_border */}
           <Box
             position="relative"
             ml="auto"
@@ -84,20 +88,22 @@ function Projects(): JSX.Element {
             borderRadius="4px 20px 4px"
             sx={{
               backgroundColor: "#4A4A4A",
-              width: { xs: "340px", xl: "180px" },
-              height: { xs: "200px", xl: "160px" },
+              width: { xs: "340px", sm: "540px", md: "740px" },
+              height: { xs: "200px", sm: "300px", md: "400px" },
             }}
           >
+            {/* screen */}
             <Box
               position="relative"
               top="16px"
               margin="auto"
               sx={{
-                width: { xs: "280px", xl: "126px" },
-                height: { xs: "160px", xl: "126px" },
+                width: { xs: "280px", sm: "480px", md: "680px" },
+                height: { xs: "160px", sm: "260px", md: "360px" },
                 backgroundColor: "#B5B28F",
               }}
             >
+              {/* projects */}
               <Box
                 pb={0.3}
                 pr={0.3}
@@ -114,13 +120,16 @@ function Projects(): JSX.Element {
                 src={steps[activeStep].image}
               />
             </Box>
+            {/* power */}
             <Typography
               position="relative"
               fontFamily="helvetica"
               fontSize="4px"
               color="white"
-              top="-99px"
               left="6.6px"
+              sx={{
+                top: { xs: "-99px", sm: "-199px", md: "-299px" },
+              }}
             >
               Power
             </Typography>
@@ -128,7 +137,9 @@ function Projects(): JSX.Element {
             <PowerMoon />
             <PowerMoon />
           </Box>
+          {/* cross_button */}
           <Box>
+            {/* vertical */}
             <Box
               position="relative"
               width="20px"
@@ -136,8 +147,12 @@ function Projects(): JSX.Element {
               top="30px"
               left="30px"
               borderRadius="3px"
-              sx={{ backgroundColor: "#4A4A4A" }}
+              sx={{
+                backgroundColor: "#4A4A4A",
+                left: { xs: "30px", sm: "100px" },
+              }}
             ></Box>
+            {/* horizontal */}
             <Box
               position="relative"
               width="55px"
@@ -145,8 +160,12 @@ function Projects(): JSX.Element {
               top="-7px"
               left="12px"
               borderRadius="3px"
-              sx={{ backgroundColor: "#4A4A4A" }}
+              sx={{
+                backgroundColor: "#4A4A4A",
+                left: { xs: "12px", sm: "82px" },
+              }}
             >
+              {/* middle_round */}
               <Box
                 position="relative"
                 height="13px"
@@ -157,17 +176,21 @@ function Projects(): JSX.Element {
                 mr="auto"
                 sx={{ backgroundColor: "#424242" }}
               ></Box>
+              {/* Buttons */}
               <Buttons handleNext={handleNext} handleBack={handleBack} />
             </Box>
           </Box>
+          {/* Button A */}
           <Box
             position="relative"
             height="24px"
             width="24px"
             borderRadius="50px"
             top="-33px"
-            left="155px"
-            sx={{ backgroundColor: "#4A4A4A" }}
+            sx={{
+              backgroundColor: "#4A4A4A",
+              left: { xs: "290px", sm: "430px", md: "630px" },
+            }}
           >
             <Box
               position="absolute"
@@ -182,6 +205,7 @@ function Projects(): JSX.Element {
               A
             </Box>
           </Box>
+          {/* Button B */}
           <Box
             position="relative"
             height="24px"
@@ -189,7 +213,10 @@ function Projects(): JSX.Element {
             borderRadius="50px"
             top="-45px"
             left="125px"
-            sx={{ backgroundColor: "#4A4A4A" }}
+            sx={{
+              backgroundColor: "#4A4A4A",
+              left: { xs: "260px", sm: "400px", md: "600px" },
+            }}
           >
             <Box
               position="absolute"
@@ -204,13 +231,17 @@ function Projects(): JSX.Element {
               B
             </Box>
           </Box>
+          {/* Select */}
           <Box
             position="relative"
             width="27px"
             height="6px"
             borderRadius="5px"
-            left="70px"
-            sx={{ backgroundColor: "#424242" }}
+            sx={{
+              backgroundColor: "#424242",
+              top: { xs: "-15px" },
+              left: { xs: "130px", sm: "230px", md: "330px" },
+            }}
           >
             <Box
               position="absolute"
@@ -225,14 +256,18 @@ function Projects(): JSX.Element {
               SELECT
             </Box>
           </Box>
+          {/* Start */}
           <Box
             position="relative"
             width="27px"
             height="6px"
             borderRadius="5px"
             left="110px"
-            top="-6px"
-            sx={{ backgroundColor: "#424242" }}
+            sx={{
+              backgroundColor: "#424242",
+              top: { xs: "-21px" },
+              left: { xs: "170px", sm: "270px", md: "370px" },
+            }}
           >
             <Box
               position="absolute"
@@ -262,8 +297,10 @@ const PowerMoon = (): JSX.Element => {
       display="inline-block"
       borderRadius="50%"
       boxShadow="2px -0.2px 0 white"
-      top="-119.7px"
       left="8.3px"
+      sx={{
+        top: { xs: "-119.7px", sm: "-219.7px", md: "-319.7px" },
+      }}
     ></Box>
   );
 };
