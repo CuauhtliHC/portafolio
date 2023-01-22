@@ -9,10 +9,15 @@ import {
   Container,
   Button,
   MenuItem,
+  Link,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const pages = ["Sobre Mi", "Aptitudes", "Proyectos"];
+const pages = [
+  { name: "Sobre Mi", link: "#aboutme" },
+  { name: "Aptitudes", link: "#skills" },
+  { name: "Proyectos", link: "#projects" },
+];
 
 function NavBar(): JSX.Element {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -87,14 +92,23 @@ function NavBar(): JSX.Element {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography
-                      textAlign="center"
-                      sx={{ textShadow: "#001aff 1px 0 10px" }}
-                    >
-                      {page}
-                    </Typography>
-                  </MenuItem>
+                  <Link
+                    href={page.link}
+                    key={page.name}
+                    sx={{ textDecoration: "none" }}
+                  >
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Typography
+                        textAlign="center"
+                        sx={{
+                          textShadow: "#001aff 1px 0 10px",
+                          textDecoration: "none !important",
+                        }}
+                      >
+                        {page.name}
+                      </Typography>
+                    </MenuItem>
+                  </Link>
                 ))}
               </Menu>
             </Box>
@@ -117,18 +131,24 @@ function NavBar(): JSX.Element {
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                    textShadow: "#001aff 1px 0 10px",
-                  }}
+                <Link
+                  href={page.link}
+                  key={page.name}
+                  sx={{ textDecoration: "none" }}
                 >
-                  {page}
-                </Button>
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      textShadow: "#001aff 1px 0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {page.name}
+                  </Button>
+                </Link>
               ))}
             </Box>
           </Toolbar>

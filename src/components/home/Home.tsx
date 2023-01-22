@@ -3,10 +3,12 @@ import { Box, Typography } from "@mui/material";
 import AboutMe from "./about/AboutMe";
 import Skills from "./skills/Skills";
 import Projects from "./projects/Projects";
+import Social from "./social/Social";
 
 function Home(): JSX.Element {
   return (
     <Fragment>
+      <Social />
       <Typography
         alignItems="center"
         justifyContent="center"

@@ -37,7 +37,14 @@ function Projects(): JSX.Element {
 
   return (
     <Fragment>
-      <Box pt={5} alignItems="center" justifyContent="center" display="flex">
+      <Box
+        pt={5}
+        alignItems="center"
+        justifyContent="center"
+        display="flex"
+        component="section"
+        id="projects"
+      >
         <Typography
           variant="h2"
           sx={{

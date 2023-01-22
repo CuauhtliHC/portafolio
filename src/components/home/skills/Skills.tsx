@@ -20,7 +20,7 @@ function Skills(): JSX.Element {
   ];
   return (
     <Fragment>
-      <Box pt={5}>
+      <Box pt={5} component="section" id="skills">
         <Typography
           variant="h2"
           align="center"

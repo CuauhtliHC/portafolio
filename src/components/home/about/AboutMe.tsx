@@ -9,6 +9,8 @@ function AboutMe(): JSX.Element {
         justifyContent="center"
         display="flex"
         sx={{ pt: { xs: 40 } }}
+        component="section"
+        id="aboutme"
       >
         <Typography
           variant="h2"
