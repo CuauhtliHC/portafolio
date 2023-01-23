@@ -73,7 +73,7 @@ function Social(): JSX.Element {
             onMouseEnter={() => setChekedCV(true)}
             onMouseLeave={() => setChekedCV(false)}
           >
-            <ListItemButton onClick={() => socialClick("CV")}>
+            <ListItemButton onClick={() => socialClick("/Cuauhtli_Herrera.pdf")}>
               <ListItemText primary="Mi CV" />
               <ListItemIcon sx={{ pl: 3 }}>
                 <ArticleIcon />
